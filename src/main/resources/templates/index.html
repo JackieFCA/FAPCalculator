@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FAP Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+
+<body ng-app="app">
+    <div>
+        <h1>Welcome to FAP Calculator</h1>
+    </div>
+    <div ng-controller="calculator">
+        <form ng-submit="submitForm()">
+            <table>
+                <tr>
+                    <td>Num Adpacks</td>
+                    <td><input type="text" placeholder="Number of adpackages" ng-model="numAdpack"></td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td><input type="text" placeholder="Number of day" ng-model="duration"></td>
+                </tr>
+                <tr>
+                    <td>Reinvest</td>
+                    <td>
+                        <select name="reinvest" ng-model="reinvest">
+                            <option selected value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <input type="submit" value="Estimate">
+            </div>
+        </form>
+        <div>
+            <div>
+                <h3>Estimate Result</h3>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <th>Day</th>
+                        <th>Total Capital</th>
+                        <th>Adpacks No</th>
+                        <th>Daily Profit</th>
+                        <th>Total Profit</th>
+                        <th>My Account Balance</th>
+                        <th>New Adpack</th>
+                        <th>Reduce Adpack</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="result in results">
+                            <td>{{result.day}}</td>
+                            <td>{{result.totalCapital}}$</td>
+                            <td>{{result.adpackNum}}</td>
+                            <td>{{result.dailyProfit}}$</td>
+                            <td>{{result.totalProfit}}$</td>
+                            <td>{{result.accountBalance}}$</td>
+                            <td>{{result.newAdpack}}</td>
+                            <td>{{result.reduceAdpack}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
