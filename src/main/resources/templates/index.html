@@ -7,11 +7,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="/js/app.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 
-<body ng-app="app">
+<body class="container" ng-app="app">
     <div>
-        <h1>Welcome to FAP Calculator</h1>
+        <h1 style="text-align: center">Welcome to FAP Calculator</h1>
     </div>
     <div ng-controller="calculator">
         <form ng-submit="submitForm()">
@@ -40,10 +41,10 @@
         </form>
         <div>
             <div>
-                <h3>Estimate Result</h3>
+                <h3 style="text-align: center">Estimate Result</h3>
             </div>
-            <div>
-                <table>
+            <div class="container">
+                <table class="table table-striped">
                     <thead>
                         <th>Day</th>
                         <th>Total Capital</th>
